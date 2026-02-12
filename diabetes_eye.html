@@ -253,28 +253,64 @@ const clinics = [
 
 /* ===== 顯示卡片 ===== */
 function renderClinics(list){
+
+    document.getElementById("totalCount").innerText =
+    "目前共有 " + list.length + " 家合作院所";
+
     const container = document.getElementById("clinicList");
     container.innerHTML = "";
 
+    // 先依行政區分組
+    const groups = {};
+
     list.forEach(c => {
-        const card = document.createElement("div");
-        card.className = "card";
+        if(!groups[c.district]){
+            groups[c.district] = [];
+        }
+        groups[c.district].push(c);
+    });
 
-        card.innerHTML = `
-            <h3>${c.name}</h3>
-            <p>${c.district}</p>
-            <p>檢查方式：${c.method}</p>
+    // 逐區顯示
+    Object.keys(groups).sort().forEach(district => {
 
-            <a class="btn map-btn"
-            href="https://www.google.com/maps/search/?api=1&query=${c.name} ${c.address}"
-            target="_blank">地圖</a>
+        // 行政區標題
+        const title = document.createElement("h2");
+        title.innerText = district;
+        title.style.marginTop = "30px";
+        title.style.borderBottom = "2px solid #1fa2ff";
+        title.style.paddingBottom = "5px";
+        container.appendChild(title);
 
-            <a class="btn phone-btn"
-            href="https://www.google.com/search?q=${c.name} 電話"
-            target="_blank">電話</a>
-        `;
+        // 卡片容器
+        const groupDiv = document.createElement("div");
+        groupDiv.style.display = "flex";
+        groupDiv.style.flexWrap = "wrap";
+        groupDiv.style.gap = "15px";
+        groupDiv.style.marginTop = "15px";
 
-        container.appendChild(card);
+        groups[district].forEach(c => {
+
+            const card = document.createElement("div");
+            card.className = "card";
+
+            card.innerHTML = `
+                <h3>${c.name}</h3>
+                <p>${c.district}</p>
+                <p>檢查方式：${c.method}</p>
+
+                <a class="btn map-btn"
+                href="https://www.google.com/maps/search/?api=1&query=${c.name} ${c.address}"
+                target="_blank">地圖</a>
+
+                <a class="btn phone-btn"
+                href="https://www.google.com/search?q=${c.name} 電話"
+                target="_blank">電話</a>
+            `;
+
+            groupDiv.appendChild(card);
+        });
+
+        container.appendChild(groupDiv);
     });
 }
 
@@ -299,6 +335,7 @@ renderClinics(clinics);
 
 </body>
 </html>
+
 
 
 
