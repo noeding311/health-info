@@ -95,13 +95,60 @@ body {
 
 /* ===== 院所資料（89家會放在這裡）===== */
 const clinics = [
-    {district:"新營區", name:"張如輝眼科診所", address:"臺南市新營區大同路8-2號"},
-    {district:"新營區", name:"衛生福利部新營醫院", address:"臺南市新營區信義街73號"},
-    {district:"新營區", name:"晶明診所", address:"臺南市新營區民治路8號之8"},
-    {district:"新營區", name:"許力元眼科診所", address:"臺南市新營區中正路86-1號"},
-    {district:"新營區", name:"營新醫院", address:"臺南市新營區隋唐街228號"},
 
-    /* ……這裡之後會放滿89家…… */
+{district:"新營區", name:"張如輝眼科診所", address:"臺南市新營區大同路8-2號", method:"免散瞳／散瞳"},
+{district:"新營區", name:"衛生福利部新營醫院", address:"臺南市新營區信義街73號", method:"免散瞳／散瞳"},
+{district:"新營區", name:"晶明診所", address:"臺南市新營區民治路8號之8", method:"散瞳"},
+{district:"新營區", name:"許力元眼科診所", address:"臺南市新營區中正路86-1號", method:"免散瞳／散瞳"},
+{district:"新營區", name:"營新醫院", address:"臺南市新營區隋唐街228號", method:"免散瞳／散瞳"},
+{district:"新營區", name:"郭昇峯內科診所", address:"臺南市新營區民治路322號", method:"免散瞳"},
+{district:"新營區", name:"陳明源眼科診所", address:"臺南市新營區民權路56-1號", method:"散瞳"},
+{district:"新營區", name:"江金旺眼科診所", address:"臺南市新營區中山路76號", method:"免散瞳／散瞳"},
+
+{district:"鹽水區", name:"建明眼科診所", address:"臺南市鹽水區武廟路63-2號", method:"散瞳"},
+
+{district:"白河區", name:"吳明強診所", address:"臺南市白河區國泰路111號", method:"免散瞳"},
+{district:"白河區", name:"白河林眼科診所", address:"臺南市白河區中山路2-53號", method:"免散瞳／散瞳"},
+
+{district:"柳營區", name:"柳營奇美醫院", address:"臺南市柳營區太康里201號", method:"免散瞳／散瞳"},
+{district:"柳營區", name:"蔡瑞頒診所", address:"臺南市柳營區成功街210號", method:"免散瞳"},
+
+{district:"後壁區", name:"德昌診所", address:"臺南市後壁區菁寮200號", method:"免散瞳"},
+
+{district:"麻豆區", name:"麻豆新樓醫院", address:"臺南市麻豆區麻佳路一段207號", method:"免散瞳／散瞳"},
+{district:"麻豆區", name:"全視界眼科診所", address:"臺南市麻豆區興中路171-9號", method:"散瞳"},
+{district:"麻豆區", name:"林眼科診所", address:"臺南市麻豆區忠孝路23-26號", method:"散瞳"},
+
+{district:"下營區", name:"晨祐診所", address:"臺南市下營區東興二街36號", method:"免散瞳"},
+
+{district:"佳里區", name:"佳里奇美醫院", address:"臺南市佳里區佳里興606號", method:"免散瞳"},
+{district:"佳里區", name:"莊嘉斐眼科診所", address:"臺南市佳里區文化路235號", method:"散瞳"},
+{district:"佳里區", name:"謝樂偉眼科診所", address:"臺南市佳里區文化路205號", method:"免散瞳／散瞳"},
+{district:"佳里區", name:"信明眼科診所", address:"臺南市佳里區光復路391號", method:"免散瞳／散瞳"},
+{district:"佳里區", name:"顏忠信眼科診所", address:"臺南市佳里區中山路189號", method:"免散瞳／散瞳"},
+{district:"佳里區", name:"黃清相診所", address:"臺南市佳里區延平路72號", method:"免散瞳"},
+
+{district:"學甲區", name:"侯瑞合診所", address:"臺南市學甲區華宗路365號", method:"免散瞳"},
+{district:"西港區", name:"健安診所", address:"臺南市西港區中山路325號", method:"免散瞳"},
+{district:"將軍區", name:"將軍區衛生所", address:"臺南市將軍區忠興185-6號", method:"免散瞳"},
+
+{district:"新化區", name:"臺南醫院新化分院", address:"臺南市新化區牧場72號", method:"免散瞳／散瞳"},
+{district:"新化區", name:"陳相國聯合診所", address:"臺南市新化區中山路489號", method:"免散瞳"},
+{district:"新化區", name:"新化眼科診所", address:"臺南市新化區中正路406號", method:"散瞳"},
+
+{district:"善化區", name:"誼仁診所", address:"臺南市善化區中正路387號", method:"免散瞳"},
+{district:"新市區", name:"方振崑眼科診所", address:"臺南市新市區中正路319-2號", method:"免散瞳／散瞳"},
+
+{district:"玉井區", name:"双美診所", address:"臺南市玉井區太子街39巷8號", method:"免散瞳"},
+{district:"玉井區", name:"明美眼科診所", address:"臺南市玉井區中華路186號", method:"免散瞳／散瞳"},
+
+{district:"仁德區", name:"協和家醫科診所", address:"臺南市仁德區中正路三段79號", method:"免散瞳"},
+
+{district:"歸仁區", name:"華國泰眼科診所", address:"臺南市歸仁區中山路二段213號", method:"免散瞳／散瞳"},
+{district:"歸仁區", name:"邱眼科診所", address:"臺南市歸仁區中山路一段328號", method:"免散瞳／散瞳"},
+
+{district:"關廟區", name:"陳育鴻眼科診所", address:"臺南市關廟區中正路1017號", method:"散瞳"}
+
 ];
 
 
@@ -152,3 +199,4 @@ renderClinics(clinics);
 
 </body>
 </html>
+
