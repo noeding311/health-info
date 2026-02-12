@@ -261,9 +261,8 @@ function renderClinics(list){
     const container = document.getElementById("clinicList");
     container.innerHTML = "";
 
-    // 先依行政區分組
+    // 依行政區分組
     const groups = {};
-
     list.forEach(c => {
         if(!groups[c.district]){
             groups[c.district] = [];
@@ -274,20 +273,31 @@ function renderClinics(list){
     // 逐區顯示
     Object.keys(groups).sort().forEach(district => {
 
+        // 外層區塊（關鍵：讓分隔線滿版）
+        const section = document.createElement("div");
+        section.style.width = "100%";
+        section.style.marginTop = "30px";
+
         // 行政區標題
         const title = document.createElement("h2");
         title.innerText = district;
-        title.style.marginTop = "30px";
-        title.style.borderBottom = "2px solid #1fa2ff";
-        title.style.paddingBottom = "5px";
-        container.appendChild(title);
+        title.style.color = "#1fa2ff";
+        title.style.marginBottom = "5px";
+        section.appendChild(title);
+
+        // 分隔線（整行）
+        const hr = document.createElement("div");
+        hr.style.height = "2px";
+        hr.style.background = "#1fa2ff";
+        hr.style.width = "100%";
+        hr.style.marginBottom = "15px";
+        section.appendChild(hr);
 
         // 卡片容器
         const groupDiv = document.createElement("div");
         groupDiv.style.display = "flex";
         groupDiv.style.flexWrap = "wrap";
         groupDiv.style.gap = "15px";
-        groupDiv.style.marginTop = "15px";
 
         groups[district].forEach(c => {
 
@@ -311,9 +321,11 @@ function renderClinics(list){
             groupDiv.appendChild(card);
         });
 
-        container.appendChild(groupDiv);
+        section.appendChild(groupDiv);
+        container.appendChild(section);
     });
 }
+
 
 
 /* ===== 搜尋功能 ===== */
@@ -336,6 +348,7 @@ renderClinics(clinics);
 
 </body>
 </html>
+
 
 
 
