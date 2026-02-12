@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>臺南市政府衛生局｜健康情報讚</title>
+
+<style>
+body {
+    font-family: "Microsoft JhengHei", sans-serif;
+    margin: 0;
+    background-color: #f4f7fb;
+}
+
+/* ====== 導覽列 ====== */
+.navbar {
+    background-color: #0f4c8a;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+/* ====== Banner ====== */
+.banner {
+    background: linear-gradient(rgba(15,76,138,0.7), rgba(15,76,138,0.7)),
+    url("https://images.unsplash.com/photo-1498837167922-ddd27525d352");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.banner h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 18px;
+}
+
+/* ====== 最新消息區 ====== */
+.section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section h2 {
+    color: #0f4c8a;
+    border-left: 5px solid #0f4c8a;
+    padding-left: 10px;
+}
+
+.news-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.news-box li {
+    margin-bottom: 8px;
+}
+
+/* ====== 三大服務卡 ====== */
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    width: 300px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    color: #0f4c8a;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 20px;
+    background: #0f4c8a;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* ====== Footer ====== */
+.footer {
+    background: #e8eef6;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+/* ====== 手機版 ====== */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 導覽列 -->
+<div class="navbar">
+    <div class="nav-title">臺南市政府衛生局｜健康情報讚</div>
+    <div class="nav-menu">
+        <a href="news.html">最新消息</a>
+        <a href="events.html">活動訊息</a>
+        <a href="education.html">衛教天地</a>
+    </div>
+</div>
+
+<!-- Banner -->
+<div class="banner">
+    <h1>健康情報讚</h1>
+    <p>掌握健康資訊｜守護市民健康生活</p>
+</div>
+
+<!-- 最新消息預覽 -->
+<div class="section">
+    <h2>最新消息</h2>
+    <div class="news-box">
+        <ul>
+            <li>114年健康講座系列活動開放報名</li>
+            <li>免費成人健康檢查服務持續辦理中</li>
+            <li>社區癌症篩檢巡迴場次公告</li>
+        </ul>
+        <a href="news.html">查看更多消息 →</a>
+    </div>
+</div>
+
+<!-- 三大服務 -->
+<div class="section">
+    <h2>服務專區</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>最新消息</h3>
+            <p>健康政策與公告資訊</p>
+            <a href="news.html">進入</a>
+        </div>
+
+        <div class="card">
+            <h3>活動訊息</h3>
+            <p>講座、篩檢與健康活動</p>
+            <a href="events.html">進入</a>
+        </div>
+
+        <div class="card">
+            <h3>衛教天地</h3>
+            <p>健康知識與宣導資料</p>
+            <a href="education.html">進入</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+臺南市政府衛生局｜國民健康科<br>
+本網站提供健康教育資訊，非醫療診斷依據
+</div>
+
+</body>
+</html>
