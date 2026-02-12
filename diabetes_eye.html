@@ -80,13 +80,43 @@ body {
 
 <body>
 
-<div class="header">
+<div style="background:#14283c; padding:15px 20px; display:flex; justify-content:space-between; align-items:center;">
+
     <div>
-        <h1>臺南市糖尿病眼底檢查醫療院所</h1>
+        <h2 style="margin:0; color:white;">臺南市糖尿病眼底檢查醫療院所</h2>
         <a href="index.html" style="color:#1fa2ff; font-size:14px;">← 回首頁</a>
     </div>
-</div>
 
+    <div>
+        <input type="text" id="searchInput"
+        placeholder="搜尋院所名稱..."
+        onkeyup="searchClinic()"
+        style="padding:6px; border-radius:5px; border:none;">
+
+        <select id="districtSelect" onchange="filterDistrict()"
+        style="margin-left:10px; padding:6px;">
+            <option value="">全部行政區</option>
+            <option value="新營區">新營區</option>
+            <option value="永康區">永康區</option>
+            <option value="東區">東區</option>
+            <option value="北區">北區</option>
+            <option value="中西區">中西區</option>
+            <option value="南區">南區</option>
+            <option value="安南區">安南區</option>
+            <option value="安平區">安平區</option>
+            <option value="歸仁區">歸仁區</option>
+            <option value="仁德區">仁德區</option>
+            <option value="麻豆區">麻豆區</option>
+            <option value="佳里區">佳里區</option>
+            <option value="白河區">白河區</option>
+            <option value="鹽水區">鹽水區</option>
+            <option value="新化區">新化區</option>
+            <option value="柳營區">柳營區</option>
+        </select>
+    </div>
+
+</div>
+    
 <div class="section">
     <div class="card-container" id="clinicList"></div>
 </div>
@@ -269,6 +299,7 @@ renderClinics(clinics);
 
 </body>
 </html>
+
 
 
 
